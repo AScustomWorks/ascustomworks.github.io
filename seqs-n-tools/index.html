@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AS Seqs &amp; Tools | AS Custom Works</title>
+  <meta name="description" content="AS Seqs & Tools: sequencers and utility modules for VCV Rack by AS Custom Works.">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0e10;
+      --panel: rgba(34, 35, 37, 0.92);
+      --text: #f2f2f2;
+      --muted: #9a9a9a;
+      --title: #c0463b;
+      --link: #f0b27a;
+      --logo: #fff6d0;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg) url("img/bg.jpg") center top / cover fixed no-repeat;
+      line-height: 1.55;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+
+    header { text-align: center; padding: 32px 0 16px; }
+    header img { width: 200px; max-width: 60%; height: auto; }
+    nav { display: flex; justify-content: flex-end; gap: 20px; margin-top: 16px; font-size: 1.1rem; }
+    nav a { color: var(--text); }
+    nav a[aria-current] { color: var(--link); }
+
+    section {
+      background: var(--panel);
+      margin: 24px 0;
+      padding: 28px 32px;
+      text-align: center;
+    }
+    h1, h2 { color: var(--title); font-weight: 700; margin: 0 0 12px; }
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.6rem; }
+    section p { font-weight: 600; font-size: 1.15rem; margin: 0; }
+    .hl { color: var(--title); }
+
+    .modules { padding: 28px 20px; }
+    .skin-toggle { display: inline-flex; gap: 4px; margin-bottom: 16px; }
+    .skin-toggle button {
+      font: inherit; font-weight: 600; cursor: pointer;
+      background: #2c2d30; color: var(--muted);
+      border: 1px solid #444; padding: 4px 16px;
+    }
+    .skin-toggle button[aria-pressed="true"] { background: var(--title); color: #fff; border-color: var(--title); }
+    .modules img { display: block; width: 100%; height: auto; }
+
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+    .cols section { margin: 0; display: flex; align-items: center; justify-content: center; }
+    .download h2 { margin: 0; font-size: 1.15rem; }
+    .download h2 a { color: var(--link); }
+
+    .changelog { text-align: left; }
+    .changelog h2 { text-align: center; }
+    .changelog h3 { color: var(--link); font-size: 1.3rem; margin: 16px 0 4px; }
+    .changelog h4 { color: var(--title); font-size: 1.15rem; margin: 20px 0 6px; }
+    .changelog p, .changelog li { font-weight: 400; font-size: 1.05rem; }
+    .changelog ul { list-style: none; margin: 0; padding: 0; }
+    .changelog li { margin: 0 0 10px; }
+
+    .links { text-align: center; font-size: 1.1rem; margin: 24px 0; }
+    .links p { margin: 4px 0; }
+
+    .email { display: inline-block; margin-top: 8px; font-size: 1.6rem; font-weight: 700; color: var(--title); }
+
+    footer { text-align: center; color: var(--muted); padding: 48px 0 32px; }
+
+    @media (max-width: 640px) {
+      nav { justify-content: center; }
+      .cols { grid-template-columns: 1fr; }
+      section { padding: 20px 16px; }
+      h1 { font-size: 1.4rem; }
+      h2 { font-size: 1.3rem; }
+      section p { font-size: 1rem; }
+      .download h2 { font-size: 1rem; }
+      .email { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="img/logo.png" alt="AS Custom Works" width="200" height="170">
+      <nav>
+        <a href="./" aria-current="page">AS Seqs &amp; Tools</a>
+        <a href="../drums-n-filters/">AS Drums &amp; Filters</a>
+      </nav>
+    </header>
+
+    <section>
+      <h1>Welcome to AS Custom Works</h1>
+      <p>This is the <span class="hl">AS Seqs &amp; Tools</span> plugin, a paid but affordable collection of modules for the Virtual Eurorack Studio application <a href="https://vcvrack.com/">VCV Rack 2</a>, made from the perspective of a user and musician, and focused on useful features with a nice graphic user interface and small footprint... because even in a virtual rack, space and looks matter.</p>
+    </section>
+
+    <section class="modules">
+      <h2>Modules:</h2>
+      <div class="skin-toggle" role="group" aria-label="Panel theme">
+        <button type="button" data-skin="dark" aria-pressed="true">Dark</button>
+        <button type="button" data-skin="light" aria-pressed="false">Light</button>
+      </div>
+      <img id="modules-img" src="img/seq-modules-dark.webp" width="2814" height="891"
+           alt="AS Seqs &amp; Tools modules: ReCon, ReStepOne, ReStep, ReBeat, ReBit, ReQ, ReNote, ReKey, ReGate, ReFluke, A/B/Y and ReFlip">
+    </section>
+
+    <div class="cols">
+      <section class="download">
+        <h2>User manual download: <a href="AS-Seqs-n-Tools-Manual.pdf">AS Seqs n Tools</a></h2>
+      </section>
+
+      <section class="download">
+        <h2>Purchase the module set for only US$20 at the official VCV Rack store: <a href="https://library.vcvrack.com/AS-Seqs-n-Tools">AS Seqs &amp; Tools</a></h2>
+      </section>
+    </div>
+
+    <section class="changelog">
+      <h2>Changelog</h2>
+
+      <h3>2.1.0</h3>
+      <p>Requires VCV Rack 2.4.0 or later.</p>
+
+      <h4>New</h4>
+      <ul>
+        <li><strong>Panel theme per module:</strong><br>Right-click a module &gt; Panel: Follow Rack, Light or Dark. The choice is saved with the patch.</li>
+        <li><strong>ReQ is polyphonic:</strong><br>The CV input and output carry up to 16 channels, each quantized independently. Root, Scale and Range CV stay monophonic; the display shows channel 1.</li>
+        <li><strong>New buttons:</strong><br>ReCon and aBy use new pad buttons with a pressed state and a radial light. ReBeat and ReBit have a matching square Reset pad.</li>
+      </ul>
+
+      <h4>Changed (may alter how existing patches behave)</h4>
+      <ul>
+        <li><strong>ReStep / ReStepOne:</strong> The first step now gets its gate. Gate length adapts to the clock (70 ms or 50% of the clock period, whichever is shorter). RUN starts and stops the whole chain; RESET returns to the first module in sync with the clock. Clock pulses are ignored for 1 ms after a reset.</li>
+        <li><strong>ReCon:</strong> PAUSE no longer cuts or creates clock pulses.</li>
+        <li><strong>ReQ:</strong> Notes near the top of an octave now round up to the next octave's root when it is closer (0.99 V in C major gives C, not B). The Indian scale is now 1 2 3 4 5 b6 b7 (it had a repeated note).</li>
+        <li><strong>ReNote:</strong> The semitone CV now follows 1 V/oct, quantized to semitones (it was 2 V per semitone).</li>
+        <li><strong>ReBeat / ReBit:</strong> Mute only silences a cell; its count keeps running, so it stays in phase when unmuted. Each cell's phase is counted from the last reset, so changing a divider live does not shift it. After a reset, each cell first fires on its own pulse.</li>
+        <li>Trigger and clock inputs in all modules use VCV's standard thresholds (high above 1 V, low below 0.1 V). ReGate's Mode CV has hysteresis.</li>
+        <li><strong>ReFlip:</strong> Each section works on its own, depending on what is connected. Gate and clock: the clock sets when a new random value is drawn and the gate is passed according to the odds. Gate only: each gate draws its own random value. Clock only: the clock is passed according to the odds (random trigger generator). No cables: 0 V. Gates before the first clock now follow the odds too.</li>
+        <li><strong>aBy:</strong> Fixed 10 ms crossfade that continues from the current level, so switching mid-fade no longer clicks.</li>
+        <li><strong>ReGate:</strong> Minimum gate length of 1 ms.</li>
+      </ul>
+
+      <h4>Fixed</h4>
+      <ul>
+        <li><strong>ReQ:</strong> Possible crash caused by the note display reading the note name while the audio thread was changing it.</li>
+        <li><strong>ReFluke:</strong> Filters are set up when the module is created, and the pink filter starts from zero instead of random values; the pink filter is processed once per sample in Pink and Grey modes.</li>
+        <li><strong>ReStep / ReStepOne:</strong> SEQ IN was added to the output twice. ReStep now passes SEQ IN in the -10..10 V range, like ReStepOne.</li>
+        <li><strong>ReNote:</strong> Octave CV no longer produces fractional octaves (6 V gave +0.6 octaves).</li>
+        <li><strong>ReKey:</strong> The mode is restored correctly when a patch is loaded.</li>
+        <li><strong>Tooltips:</strong> ReFluke shows the noise type and divider; ReGate shows the gate length in ms; ReFlip's third odds CV input is labeled correctly.</li>
+        <li>Lower CPU use in ReKey and ReBeat.</li>
+      </ul>
+    </section>
+
+    <div class="links">
+      <p>Found an issue and want to report it? You can do it <a href="https://github.com/AScustomWorks/ascustomworks.github.io/issues">here</a></p>
+      <p>Looking for the AS Drums &amp; Filters plugin? Get it here: <a href="../drums-n-filters/">AS Drums &amp; Filters</a></p>
+      <p>Want the free and open source AS modules instead? Get them here: <a href="https://github.com/AScustomWorks/AS">AS modules</a></p>
+    </div>
+
+    <footer>&copy; 2017&ndash;2026 AS Custom Works</footer>
+  </div>
+
+  <script>
+    (function () {
+      var img = document.getElementById("modules-img");
+      var buttons = document.querySelectorAll(".skin-toggle button");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          img.src = "img/seq-modules-" + btn.dataset.skin + ".webp";
+          buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

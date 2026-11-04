@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AS Drums &amp; Filters | AS Custom Works</title>
+  <meta name="description" content="AS Drums & Filters: drum and filter modules for VCV Rack by AS Custom Works.">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0e10;
+      --panel: rgba(34, 35, 37, 0.92);
+      --text: #f2f2f2;
+      --muted: #9a9a9a;
+      --title: #c0463b;
+      --link: #f0b27a;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg) url("img/bg.jpg") center top / cover fixed no-repeat;
+      line-height: 1.55;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+
+    header { text-align: center; padding: 32px 0 16px; }
+    header img { width: 200px; max-width: 60%; height: auto; }
+    nav { display: flex; justify-content: flex-end; gap: 20px; margin-top: 16px; font-size: 1.1rem; }
+    nav a { color: var(--text); }
+    nav a[aria-current] { color: var(--link); }
+
+    section {
+      background: var(--panel);
+      margin: 24px 0;
+      padding: 28px 32px;
+      text-align: center;
+    }
+    h1, h2 { color: var(--title); font-weight: 700; margin: 0 0 12px; }
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.6rem; }
+    section p { font-weight: 600; font-size: 1.15rem; margin: 0; }
+    .hl { color: var(--title); }
+
+    .modules { padding: 28px 20px; }
+    /* flex-grow = aspect ratio of each image, so both rows end at the same height */
+    .module-imgs { display: flex; gap: 20px; align-items: flex-start; }
+    .module-imgs img { display: block; width: 100%; height: auto; min-width: 0; }
+    .module-imgs .drums { flex: 2.691 1 0; }
+    .module-imgs .filters { flex: 1.027 1 0; }
+
+    footer { text-align: center; color: var(--muted); padding: 48px 0 32px; }
+
+    @media (max-width: 640px) {
+      nav { justify-content: center; }
+      section { padding: 20px 16px; }
+      h1 { font-size: 1.4rem; }
+      h2 { font-size: 1.3rem; }
+      section p { font-size: 1rem; }
+      .module-imgs { flex-direction: column; }
+      .module-imgs .drums, .module-imgs .filters { flex: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="img/logo.png" alt="AS Custom Works" width="200" height="170">
+      <nav>
+        <a href="../seqs-n-tools/">AS Seqs &amp; Tools</a>
+        <a href="./" aria-current="page">AS Drums &amp; Filters</a>
+      </nav>
+    </header>
+
+    <section>
+      <h1>Welcome to AS Custom Works</h1>
+      <p>This is the <span class="hl">AS Drums &amp; Filters</span> plugin, a paid but affordable collection of modules for the Virtual Eurorack Studio application <a href="https://vcvrack.com/">VCV Rack 2</a>, made from the perspective of a user and musician, and focused on useful features with a nice graphic user interface and small footprint... because even in a virtual rack, space and looks matter.</p>
+    </section>
+
+    <section class="modules">
+      <h2>Modules:</h2>
+      <div class="module-imgs">
+        <img class="drums" src="img/drum-modules.webp" width="2882" height="1071" alt="AS Drums &amp; Filters drum modules">
+        <img class="filters" src="img/filter-modules.webp" width="1105" height="1076" alt="AS Drums &amp; Filters filter modules">
+      </div>
+    </section>
+
+    <footer>&copy; 2017&ndash;2026 AS Custom Works</footer>
+  </div>
+</body>
+</html>
