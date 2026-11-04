@@ -137,6 +137,7 @@
       <ul>
         <li><strong>Panel theme per module:</strong><br>Right-click a module &gt; Panel: Follow Rack, Light or Dark. The choice is saved with the patch.</li>
         <li><strong>ReQ is polyphonic:</strong><br>The CV input and output carry up to 16 channels, each quantized independently. Root, Scale and Range CV stay monophonic; the display shows channel 1.</li>
+        <li><strong>ReQ range response:</strong><br>Right-click &gt; Range response: Unipolar (0 V up, as before) or Bipolar (centered on 0 V, so a MIDI keyboard below C4 also works). Octave range keeps counting octaves: in Bipolar, 4 covers -2 V..+2 V and the display shows ±4. Applies to all channels.</li>
         <li><strong>New buttons:</strong><br>ReCon and aBy use new pad buttons with a pressed state and a radial light. ReBeat and ReBit have a matching square Reset pad.</li>
       </ul>
 
@@ -144,7 +145,7 @@
       <ul>
         <li><strong>ReStep / ReStepOne:</strong> The first step now gets its gate. Gate length adapts to the clock (70 ms or 50% of the clock period, whichever is shorter). RUN starts and stops the whole chain; RESET returns to the first module in sync with the clock. Clock pulses are ignored for 1 ms after a reset.</li>
         <li><strong>ReCon:</strong> PAUSE no longer cuts or creates clock pulses.</li>
-        <li><strong>ReQ:</strong> Notes near the top of an octave now round up to the next octave's root when it is closer (0.99 V in C major gives C, not B). The Indian scale is now 1 2 3 4 5 b6 b7 (it had a repeated note).</li>
+        <li><strong>ReQ:</strong> Notes near the top of an octave now round up to the next octave's root when it is closer (0.99 V in C major gives C, not B). The Indian scale is now 1 2 3 4 5 b6 b7 (it had a repeated note). Octave range now works as described in the manual: the input is quantized in its own octave and notes outside 0 V..range V (before the root is added) keep their name and move by octaves into it (it used to squeeze the whole 0–10 V input into that many octaves). With range 10 and a 0–10 V input nothing changes.</li>
         <li><strong>ReNote:</strong> The semitone CV now follows 1 V/oct, quantized to semitones (it was 2 V per semitone).</li>
         <li><strong>ReBeat / ReBit:</strong> Mute only silences a cell; its count keeps running, so it stays in phase when unmuted. Each cell's phase is counted from the last reset, so changing a divider live does not shift it. After a reset, each cell first fires on its own pulse.</li>
         <li>Trigger and clock inputs in all modules use VCV's standard thresholds (high above 1 V, low below 0.1 V). ReGate's Mode CV has hysteresis.</li>
