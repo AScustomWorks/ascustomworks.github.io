@@ -113,8 +113,8 @@
         <button type="button" data-skin="dark" aria-pressed="true">Dark</button>
         <button type="button" data-skin="light" aria-pressed="false">Light</button>
       </div>
-      <img id="modules-img" src="img/seq-modules-dark.webp" width="2814" height="891"
-           alt="AS Seqs &amp; Tools modules: ReCon, ReStepOne, ReStep, ReBeat, ReBit, ReQ, ReNote, ReKey, ReGate, ReFluke, A/B/Y and ReFlip">
+      <img id="modules-img" src="img/seq-modules-dark.webp" width="3488" height="1054"
+           alt="AS Seqs &amp; Tools modules: ReCon, ReStepOne, ReStep, ReBeat, ReBit, ReNote, ReKey, ReQ, ReGate, ReSwing, ReFluke, ReFlip and A/B/Y">
     </section>
 
     <div class="cols">
@@ -139,6 +139,8 @@
         <li><strong>ReQ is polyphonic:</strong><br>The CV input and output carry up to 16 channels, each quantized independently. Root, Scale and Range CV stay monophonic; the display shows channel 1.</li>
         <li><strong>ReQ range response:</strong><br>Right-click &gt; Range response: Unipolar (0 V up, as before) or Bipolar (centered on 0 V, so a MIDI keyboard below C4 also works). Octave range keeps counting octaves: in Bipolar, 4 covers -2 V..+2 V and the display shows ±4. Applies to all channels.</li>
         <li><strong>New buttons:</strong><br>ReCon and aBy use new pad buttons with a pressed state and a radial light. ReBeat and ReBit have a matching square Reset pad.</li>
+        <li><strong>ReSwing (new module, 4 HP):</strong><br>Dual clock swing. Every second clock pulse is delayed by the swing amount (50% straight, 66.7% triplet, 75% maximum) and keeps its gate length. Swing CV adds 0–25%. CLK and RST of channel 2 are normalled to channel 1. Right-click &gt; Swing steps: Free or Steps (50, 54, 58, 62, 66.7, 71, 75%).</li>
+        <li><strong>ReGate overlapping gates:</strong><br>Right-click &gt; Overlapping gates: Merge (as before: a pulse that arrives while the gate is high extends it) or Retrigger (the output drops for one sample and a new gate starts, so every input pulse gives a new gate). Useful after ReSwing or with long gates on fast clocks.</li>
       </ul>
 
       <h4>Changed (may alter how existing patches behave)</h4>
