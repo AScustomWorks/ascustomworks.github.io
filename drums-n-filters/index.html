@@ -54,11 +54,19 @@
     .module-imgs { display: flex; gap: 20px; align-items: flex-start; }
     .module-imgs img { display: block; width: 100%; height: auto; min-width: 0; }
     .module-imgs .drums { flex: 2.691 1 0; }
-    .module-imgs .filters { flex: 1.027 1 0; }
+    .module-imgs .filters { flex: 1.576 1 0; }
 
     .download { text-align: center; }
     .download h2 { margin: 0; font-size: 1.15rem; }
     .download h2 a { color: var(--link); }
+
+    .changelog { text-align: left; }
+    .changelog h2 { text-align: center; }
+    .changelog h3 { color: var(--link); font-size: 1.3rem; margin: 16px 0 4px; }
+    .changelog h4 { color: var(--title); font-size: 1.15rem; margin: 20px 0 6px; }
+    .changelog p, .changelog li { font-weight: 400; font-size: 1.05rem; }
+    .changelog ul { list-style: none; margin: 0; padding: 0; }
+    .changelog li { margin: 0 0 10px; }
 
     .links { text-align: center; font-size: 1.1rem; margin: 24px 0; }
     .links p { margin: 4px 0; }
@@ -96,12 +104,51 @@
       <h2>Modules:</h2>
       <div class="module-imgs">
         <img class="drums" src="img/drum-modules.webp" width="2882" height="1071" alt="AS Drums &amp; Filters drum modules">
-        <img class="filters" src="img/filter-modules.webp" width="1105" height="1076" alt="AS Drums &amp; Filters filter modules">
+        <img class="filters" src="img/filter-modules.webp" width="1696" height="1076" alt="AS Drums &amp; Filters filter modules">
       </div>
     </section>
 
     <section class="download">
+      <h2>User manual: <a href="manual.html">AS Drums &amp; Filters</a></h2>
+    </section>
+
+    <section class="download">
       <h2>Purchase the module set for only US$20 at the official VCV Rack store: <a href="https://library.vcvrack.com/AS-Drums-n-Filters">AS Drums &amp; Filters</a></h2>
+    </section>
+
+    <section class="changelog" id="changelog">
+      <h2>Changelog</h2>
+
+      <h3>2.1.0</h3>
+
+      <h4>New</h4>
+      <ul>
+        <li><strong>3-Band Parametric EQ (ParaEQ 3, new module, 14 HP).</strong> Stereo EQ with low (30 Hz–1 kHz), mid (100 Hz–12 kHz) and high (1–16 kHz) bands, ±18 dB each, plus an output level of ±12 dB. The low and high bands switch between shelf and peak, and all three have Q. A CRT-style screen shows the total curve and each band. Polyphonic, up to 16 channels per side.</li>
+        <li><strong>Polyphonic filters and EQ.</strong> VC Filter, VC Filter Stereo, Fixed Filter Bank and Parametric EQ process up to 16 channels. The FREQ, RES and MIX CVs of the VC Filters and the LP/HP CVs of Fixed Filter Bank can be polyphonic. VC Filter Stereo uses a mono audio cable for every channel.</li>
+        <li><strong>Bypass.</strong> When you bypass a filter or EQ in Rack, the audio goes straight through.</li>
+        <li><strong>User manuals</strong> for every module, on the VCV Library pages.</li>
+      </ul>
+
+      <h4>Changed (may alter how existing patches sound)</h4>
+      <ul>
+        <li><strong>Drum levels:</strong> all drum modules are balanced by sound family (kicks, snares and toms; claps and cowbell; hihats and cymbals; rimshot, clave and maracas), so the kits sit at a similar loudness. Existing patches may sound louder or quieter.</li>
+        <li><strong>Drum pitch:</strong> the samples now play at their correct pitch at any engine sample rate. They used to play higher above 44.1 kHz (about 1.5 semitones at 48 kHz, an octave at 88.2 kHz).</li>
+        <li><strong>Kicks / Snares / Hihats:</strong> MORPH CV now adds to the knob (it used to replace it). Patches saved with the CV connected load with the knob at zero, so they sound the same. The middle of the morph no longer drops about 3 dB.</li>
+        <li><strong>Fixed Filter Bank:</strong> the LP and HP knobs follow an exponential scale (11.7 Hz–12 kHz), and their CVs follow 1V/octave (it was 1V = 1200 Hz). Existing patches open with the same cutoff, but the CV response is different.</li>
+        <li><strong>Parametric EQ:</strong> the FREQ knob follows an exponential scale (100 Hz–12 kHz). Existing patches open at the same frequency.</li>
+        <li><strong>Percs / Toms:</strong> changing the sound fades the previous one out in 5 ms instead of cutting it.</li>
+        <li><strong>VC Filter / VC Filter Stereo:</strong> switching between LP and HP fades over 5 ms, so it doesn't click.</li>
+      </ul>
+
+      <h4>Fixed</h4>
+      <ul>
+        <li><strong>Drums:</strong> the start of every hit played a short click (the header of the sample file).</li>
+        <li><strong>Drums:</strong> the TONE control reaches its intended frequencies at any sample rate.</li>
+        <li><strong>VC Filter / VC Filter Stereo:</strong> the LP/HP CV input kept flipping the mode while the voltage was high; now it flips once per trigger.</li>
+        <li><strong>Tooltips</strong> show real values: VC Filter cutoff in Hz, Parametric EQ level in dB (±18) and Q, Fixed Filter Bank bands in dB and LP/HP in Hz, and the sound name on Percs and Toms.</li>
+        <li>Memory leaks in VC Filter, VC Filter Stereo, Fixed Filter Bank and Parametric EQ.</li>
+        <li>Lower CPU use in all modules: the drum tone and the filters are only recalculated when a control or the sample rate changes.</li>
+      </ul>
     </section>
 
     <div class="links">
