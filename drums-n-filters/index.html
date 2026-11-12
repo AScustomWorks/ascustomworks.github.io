@@ -134,21 +134,21 @@
         <li><strong>Drum levels:</strong> all drum modules are balanced by sound family (kicks, snares and toms; claps and cowbell; hihats and cymbals; rimshot, clave and maracas), so the kits sit at a similar loudness. Existing patches may sound louder or quieter, adjust as needed.</li>
         <li><strong>Drum pitch:</strong> the samples now play at their correct pitch at any engine sample rate.</li>
         <li><strong>Kicks / Snares / Hihats:</strong> MORPH CV now adds to the knob (it used to replace it). Patches saved with the CV connected load with the knob at zero, so they sound the same. The full range of the morph is balanced now.</li>
-        <li><strong>Fixed Filter Bank:</strong> the LP and HP knobs follow an exponential scale (11.7 Hz–12 kHz), and their CVs follow 1V/octave (it was 1V = 1200 Hz). Existing patches open with the same cutoff, but the CV response is different.</li>
+        <li><strong>Fixed Filter Bank:</strong> the LP and HP knobs follow an exponential scale (11.7 Hz–12 kHz), and their CVs now follow 1V/octave. Existing patches open with the same cutoff, but the CV response is different.</li>
         <li><strong>Parametric EQ:</strong> the FREQ knob follows an exponential scale (100 Hz–12 kHz). Existing patches open at the same frequency.</li>
-        <li><strong>Percs / Toms:</strong> changing the sound fades the previous one out in 5 ms instead of cutting it.</li>
-        <li><strong>VC Filter / VC Filter Stereo:</strong> switching between LP and HP fades over 5 ms, so it doesn't click.</li>
+        <li><strong>Percs / Toms:</strong> switching between sounds doesn't click anymore.</li>
+        <li><strong>VC Filter / VC Filter Stereo:</strong> switching between LP and HP is smooth now, so it doesn't click.</li>
       </ul>
 
       <h4>Fixed</h4>
       <ul>
-        <li><strong>Drums:</strong> the start of every hit played a short click (the header of the sample file).</li>
+        <li><strong>Drums:</strong> the start of every hit played a short click.</li>
         <li><strong>Drums:</strong> the TONE control reaches its intended frequencies at any sample rate.</li>
         <li><strong>VC Filter / VC Filter Stereo:</strong> the LP/HP CV input kept flipping the mode while the voltage was high; now it flips once per trigger.</li>
-        <li><strong>CMP Percussions:</strong> the last two sounds are now named Low Blip (LB) and High Blip (HB) on the panel and in the tooltip; they were labeled as maracas.</li>
-        <li><strong>Tooltips</strong> show real values: VC Filter cutoff in Hz, Parametric EQ level in dB (±18) and Q, Fixed Filter Bank bands in dB and LP/HP in Hz, and the sound name on Percs and Toms.</li>
+        <li><strong>CMP Percussions:</strong> the last two sounds are now named correctly: Low Blip (LB) and High Blip (HB) on the panel and in the tooltip.</li>
+        <li><strong>Tooltips</strong> show proper values now: VC Filter cutoff in Hz, Parametric EQ level in dB (±18) and Q, Fixed Filter Bank bands in dB and LP/HP in Hz, and the sound name on Percs and Toms.</li>
         <li>Memory leaks in VC Filter, VC Filter Stereo, Fixed Filter Bank and Parametric EQ.</li>
-        <li>Lower CPU use in all modules: the drum tone and the filters are only recalculated when a control or the sample rate changes.</li>
+        <li>Lower CPU use in all modules.</li>
       </ul>
     </section>
 
