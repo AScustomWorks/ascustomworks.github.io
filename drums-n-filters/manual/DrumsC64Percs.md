@@ -5,8 +5,8 @@ The **SOUND** knob picks one of 5 sounds, marked on the panel:
 - **CB**: cowbell
 - **CL**: clave
 - **CP**: clap
-- **MA**: maracas
-- **RS**: a second maracas sound
+- **LB**: low blip, a low, pitched chip hit with a hissy tail
+- **HB**: high blip, the same idea, higher
 
 If you change the sound while one is still ringing, the old one fades out quickly instead of cutting off.
 
