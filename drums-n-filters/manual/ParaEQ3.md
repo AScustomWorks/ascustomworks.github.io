@@ -31,6 +31,21 @@ The module is polyphonic: it processes up to 16 channels on each side.
 When you bypass the module in Rack, each input goes straight to its output.
 With only L connected, the R output is silent while bypassed.
 
+##### Presets
+
+Right-click the panel and open **"Preset"** to load a starting point:
+
+- **Kick Punch**: more low end and click, less boxiness.
+- **Snare Crack**: body, attack and a brighter snare wire.
+- **Hihat Air**: removes the low end and adds shine.
+- **Drum Bus Smile**: a gentle lift of lows and highs for a whole kit.
+- **Bass Tighten**: less mud, more presence.
+- **De-Mud**: a wide cut around 300 Hz that cleans up almost any sound.
+- **Vintage Low Trick**: a low boost with a small cut just above it, for a big but clean bottom end.
+- **Telephone - Lo-Fi**: only the middle of the sound, like a small speaker.
+
+Each preset is only a starting point: adjust FREQ to the sound you are working on.
+
 #### Starter tips
 
 To find a harsh or boomy frequency, turn the mid Q to the right, boost LEVEL a lot and sweep FREQ until it jumps out. Then turn LEVEL down below the middle to cut it.
