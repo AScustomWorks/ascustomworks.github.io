@@ -28,8 +28,7 @@ Set COUNT to 1 to use the full CV range.
 
 **OUT** is the output: single pulses and bursts.
 
-RTCH and COUNT are read 1 millisecond after each clock pulse.
-That way a module driven by the same clock, like [*ReFlip*](ReFlip.md#manual), [*ReBit*](ReBit.md#manual) or [*ReStep*](ReStep.md#manual), has time to send its new value.
+RTCH and COUNT can come from a module driven by the same clock, like [*ReFlip*](ReFlip.md#manual), [*ReBit*](ReBit.md#manual) or [*ReStep*](ReStep.md#manual): its new value is used on the same pulse.
 
 The CLK and RTCH inputs of each channel are linked to the channel above.
 With only channel 1 patched, all three channels follow the same clock and the same RTCH, each with its own COUNT.
@@ -43,13 +42,10 @@ Right-click the panel to set the **"Panel"** theme: **Follow Rack**, **Light** o
 *ReRatchet* needs two pulses to measure the clock.
 The first pulse after starting, or after the clock stops for more than 10 seconds, passes as it comes in.
 
-With a swung clock the time between pulses alternates long and short.
-*ReRatchet* follows that pattern, so each burst fits in its own slot.
-After a pause or a big tempo change it uses the shorter time, so a burst never runs into the next pulse.
+*ReRatchet* follows swung clocks, pauses and tempo changes, so a burst never runs into the next pulse.
 If a new pulse arrives before a burst has finished, the rest of the burst is skipped.
 
-Each pulse of a burst lasts at least 1 millisecond.
-At very fast clocks the burst gets fewer pulses, and clocks faster than 4 ms per pulse pass unchanged.
+At very fast clocks the burst gets fewer pulses, and the fastest clocks pass unchanged.
 
 *ReRatchet* has no reset: every pulse is handled on its own.
 If the pattern shifts, reset the modules before it, like your sequencer or *ReSwing*.
