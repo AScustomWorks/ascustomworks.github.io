@@ -113,8 +113,8 @@
         <button type="button" data-skin="dark" aria-pressed="true">Dark</button>
         <button type="button" data-skin="light" aria-pressed="false">Light</button>
       </div>
-      <img id="modules-img" src="img/seq-modules-dark.webp" width="3488" height="1054"
-           alt="AS Seqs &amp; Tools modules: ReCon, ReStepOne, ReStep, ReBeat, ReBit, ReNote, ReKey, ReQ, ReGate, ReSwing, ReFluke, ReFlip and A/B/Y">
+      <img id="modules-img" src="img/seq-modules-dark.webp" width="3704" height="1054"
+           alt="AS Seqs &amp; Tools modules: ReCon, ReStepOne, ReStep, ReBeat, ReBit, ReKey, ReNote, ReQ, ReGate, ReSwing, ReFluke, ReFlip, ReRatchet and A/B/Y">
     </section>
 
     <div class="cols">
@@ -129,6 +129,20 @@
 
     <section class="changelog" id="changelog">
       <h2>Changelog</h2>
+
+      <h3>2.2.0</h3>
+
+      <h4>New</h4>
+      <ul>
+        <li><strong>ReRatchet (new module, 5 HP):</strong><br>Triple trigger ratchet. Each clock pulse comes out as a burst of 1 to 8 pulses spread over the time to the next pulse, with a display on the COUNT knob. RTCH chooses which pulses become bursts (from ReFlip for random rolls, from ReBit or ReStep for patterns); Count CV adds 0–7. Works with swung clocks from ReSwing. CLK and RTCH of each channel are normalled to the channel above.</li>
+        <li><strong>aBy is polyphonic:</strong><br>The signal inputs and outputs carry up to 16 channels, switched together with one fade. In the bottom section the output keeps the larger channel count of A and B in both positions. A mono input next to a polyphonic one is copied to every channel. Mono patches work as before.</li>
+      </ul>
+
+      <h4>Changed</h4>
+      <ul>
+        <li><strong>Light tooltips:</strong><br>Hover a light to see what it shows: the gate on ReKey and ReStepOne, the current step on ReStep, the routing on aBy, the cells of ReBeat and ReBit and the clock on ReFluke.</li>
+        <li><strong>Aligned panels:</strong><br>ReGate, ReSwing, ReFlip, ReRatchet, ReQ and aBy share the same rows for their jacks, so they line up when placed side by side. Only positions changed: saved patches load as before.</li>
+      </ul>
 
       <h3>2.1.0</h3>
       <p>Requires VCV Rack 2.4.0 or later.</p>
