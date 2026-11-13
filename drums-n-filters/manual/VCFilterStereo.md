@@ -4,7 +4,7 @@ Both channels share the same controls, so the stereo image stays intact while yo
 - **FREQ**: the cutoff, from 40 Hz to 12 kHz. In low pass mode, frequencies above it are cut; in high pass mode, frequencies below it are cut.
 - **RES**: resonance. Turn it up to boost the frequencies around the cutoff for a sharper, more vocal sound.
 - **MIX**: balance between the dry and the filtered signal. Fully right (the default) you hear only the filter.
-- **LP** / **HP** switch: low pass (removes highs) or high pass (removes lows). The change fades over a few milliseconds, so there's no click.
+- **LP** / **HP** switch: low pass (removes highs) or high pass (removes lows). Switching between low pass and high pass is smooth, so there's no click.
 
 ##### Inputs and outputs
 
